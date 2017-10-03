@@ -1,0 +1,11 @@
+{% extends 'base/base.html' %}
+    {% block content1 %}
+        <ul class="nav nav-list bs-docs-sidenav">
+            <li><a href="{% url 'index5_1' 1 %}"><i class="icon-chevron-right"></i>实训楼开关门</a></li>
+            <li><a href="{% url 'index5_2' 1 %}"><i class="icon-chevron-right"></i>实训楼课程表</a></li>
+            <li><a href="http://10.10.2.15:81/" target="_blank"><i class="icon-chevron-right"></i>实训耗材仓库</a></li>
+            <li><a href="#"><i class="icon-chevron-right"></i>实训设备资产</a></li>
+            <li><a href="#"><i class="icon-chevron-right"></i>实训设备维护</a></li>
+            <li><a href="{% url 'index5_6' %}"><i class="icon-chevron-right"></i>实训楼统计</a></li>
+        </ul>
+    {% endblock %}

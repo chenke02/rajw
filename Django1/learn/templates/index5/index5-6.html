@@ -1,0 +1,6 @@
+{% extends 'base/base-left5.html' %}
+{% block content %}
+    {% for name in names %}
+        {{ name.Course }} {{ name.People }}<br>
+    {% endfor %}
+{% endblock %}
