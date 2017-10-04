@@ -13,17 +13,12 @@ class train_course(models.Model):
 
 class train_basic(models.Model):
     uid = models.CharField(max_length=20)
+    Category = models.CharField(max_length=20)
     Pastern = models.CharField(max_length=20)
     Build = models.CharField(max_length=20)
     Name = models.CharField(max_length=20)
     Content = models.CharField(max_length=20)
     Power = models.CharField(max_length=20)
-    Area = models.CharField(max_length=20)
-
-
-
-class train(models.Model):
-    Course = models.CharField(max_length=20)
-
-    def __unicode__(self):
-        return self.Course
+    Length = models.IntegerField(max_length=5)
+    Width = models.IntegerField(max_length=5)
+    Remarks = models.CharField(max_length=20)

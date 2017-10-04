@@ -147,6 +147,6 @@ def index5_2(request, d):
 
 # 实训楼统计
 def index5_6(request):
-    names = train_course.objects.all()
+    names = train_basic.objects.all()
     return render_to_response('index5/index5-6.html', locals())
 

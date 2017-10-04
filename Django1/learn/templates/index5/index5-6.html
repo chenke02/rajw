@@ -1,6 +1,36 @@
 {% extends 'base/base-left5.html' %}
 {% block content %}
-    {% for name in names %}
-        {{ name.Course }} {{ name.People }}<br>
-    {% endfor %}
+    <table class="table-striped" border="0" cellspacing="0">
+	<thead>
+        <tr>
+            <td colspan=9 align="center" valign=middle height="60"><font face="DejaVu Sans" size=6>实训楼统计</font></td>
+        </tr>
+		<tr>
+            <th style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="center" valign=middle height="32" width="90">实训编号</th>
+            <th style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="center" valign=middle height="32">名称</th>
+			<th style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="center" valign=middle height="32" width="80">所属系部</th>
+            <th style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="center" valign=middle height="32" width="60">类型</th>
+            <th style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="center" valign=middle height="32" width="70">容量(人)</th>
+            <th style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="center" valign=middle height="32" width="100">用电量(kw/h)</th>
+            <th style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="center" valign=middle height="32" width="80">面积(m^2)</th>
+            <th style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="center" valign=middle height="32" width="70">使用情况</th>
+            <th style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="center" valign=middle height="32" width="120">备注</th>
+		</tr>
+	</thead>
+	<tbody>
+		{% for name in names %}
+            <tr>
+                <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="center" valign=middle height="18">实训{{ name.uid }}</td>
+                <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="center" valign=middle height="18">{{ name.Name }}</td>
+                <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="center" valign=middle height="18">{{ name.Pastern }}</td>
+                <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="center" valign=middle height="18">{{ name.Category }}</td>
+                <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="center" valign=middle height="18">{{ name.Content }}</td>
+                <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="center" valign=middle height="18">{{ name.Power }}</td>
+                <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="center" valign=middle height="18">{% widthratio name.Length 1 name.Width %}</td>
+                <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="center" valign=middle height="18">{{ name.Remarks }}</td>
+                <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000" align="center" valign=middle height="18"> </td>
+		    </tr>
+        {% endfor %}
+	</tbody>
+</table>
 {% endblock %}

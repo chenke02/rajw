@@ -7,6 +7,7 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
+        ('learn', '0003_train_basic'),
     ]
 
     operations = [

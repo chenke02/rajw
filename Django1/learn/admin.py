@@ -1,5 +1,5 @@
 from django.contrib import admin
-from learn.models import train_course, train, train_basic
+from .models import train_course, train_basic
 
 
 class TrainAdmin(admin.ModelAdmin):
@@ -7,9 +7,8 @@ class TrainAdmin(admin.ModelAdmin):
 
 
 class BasicAdmin(admin.ModelAdmin):
-    list_display = ('id', 'Pastern', 'Build', 'Content', 'Name', 'Power', 'Area')
+    list_display = ('uid',  'Category', 'Pastern', 'Build', 'Content', 'Name', 'Power', 'Length', 'Width', 'Remarks')
 
 
 admin.site.register(train_course, TrainAdmin)
-admin.site.register(train)
 admin.site.register(train_basic, BasicAdmin)
